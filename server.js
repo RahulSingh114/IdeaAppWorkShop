@@ -1,10 +1,11 @@
-const express = require('express')
+const express = require('express');
+const serverConfig=require('./config/server.config')
 
 const app=express();
 
-const port=3333;
 
-app.listen(port,()=>{
-    console.log("server is running",port);
+
+app.listen(serverConfig.port,()=>{
+    console.log("server is running",serverConfig.port);
     
 })

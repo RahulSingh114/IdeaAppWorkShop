@@ -3,6 +3,7 @@ const serverConfig=require('./config/server.config');
 const mongoose=require("mongoose");
 const dbConfig=require('./config/db.config');
 const userModel=require("./model/user.model");
+const bcrypt=require('bcrypt')
 
 const app=express();
 // logic to connect to MongoDB abd Create an ADMIN user
@@ -43,7 +44,7 @@ async function init(){
         userId:"adimn",
         email:"rahul@gmail.com",
         userType:"ADMIN",
-        password:"welcome1"
+        password:bcrypt.hashSync("welcome1",8)
     })
     console.log(admin);
     

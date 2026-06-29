@@ -3,9 +3,9 @@
 
 
 const mongoose= require('mongoose')
-const userSchema=new mongoose.schema({
+const userSchema=new mongoose.Schema({
      name:{
-        type:string,
+        type:String,
         require:true
      },
      userId:{
@@ -32,4 +32,4 @@ const userSchema=new mongoose.schema({
      }
 },{timestamps:true});
 
-mongoose.model()
+module.exports = mongoose.model("User", userSchema);
